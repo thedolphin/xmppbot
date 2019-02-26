@@ -1,6 +1,12 @@
 # xmppbot
 XMPP sending bot with email gateway for monitoring and CI
 
+# Принцип работы
+* серверная часть - daemon.py открывает сокет, в который клиенты посылают json с сообщением
+* клиентская часть
+  * send.py <jid> <subject> <message> - если надо отправить сообщение из скрипта или коноли
+  * sendmail.py <jid> - интегрируется в posfix
+
 # Установка
 
 * колнируем в /opt/xmppbot
@@ -20,5 +26,3 @@ XMPP sending bot with email gateway for monitoring and CI
   * restorecon -R /opt/xmppbot
 * конфигурируем postfix по примеру в файле sendmail.py
 * systemctl enable --now xmppbot
-
-Отправлять сообщения можно скриптом send.py или через sendmail
