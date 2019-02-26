@@ -1,0 +1,5 @@
+sleekxmpp
+dnspython
+email
+systemd-python
+py-zabbix

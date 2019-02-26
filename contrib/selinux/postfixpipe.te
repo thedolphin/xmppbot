@@ -1,0 +1,22 @@
+
+module postfixpipe 1.0;
+
+require {
+	type postfix_pipe_t;
+	type init_t;
+	type var_log_t;
+	class unix_stream_socket connectto;
+	class dir write;
+	class dir add_name;
+	class file create;
+	class file append;
+	class file open;
+}
+
+#============= postfix_pipe_t ==============
+
+allow postfix_pipe_t init_t:unix_stream_socket connectto;
+allow postfix_pipe_t var_log_t:dir write;
+allow postfix_pipe_t var_log_t:dir add_name;
+allow postfix_pipe_t var_log_t:file create;
+allow postfix_pipe_t var_log_t:file { append open };

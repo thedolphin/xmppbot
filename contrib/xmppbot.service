@@ -1,0 +1,15 @@
+[Unit]
+Description = XMPP Bot
+
+[Service]
+Type = notify
+WorkingDirectory = /opt/xmppbot
+ExecStart = /opt/xmppbot/venv/bin/python daemon.py
+User = jabberbot
+Group = jabberbot
+KillSignal = SIGINT
+Restart = always
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target

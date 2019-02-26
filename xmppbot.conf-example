@@ -1,0 +1,5 @@
+[main]
+server = ip.address.of.server
+jid = jid@domain.tld
+password = P@44w0rD
+socket = /run/jabberbot/sock
